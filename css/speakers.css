@@ -1,0 +1,203 @@
+:root {
+  --main-text-color: rgba(26, 73, 95, 0.9);
+  --my-border: 1px solid rgba(0, 0, 0, 0.1);
+  --p-font-size: 1.1rem;
+  --header-footer-bg-color: #ebebeb;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--main-text-color);
+}
+body {
+  font-family: "Hepta Slab", serif;
+  font-weight: 300;
+}
+h1,
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0.9rem 0;
+}
+h3 {
+  font-weight: 300;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+hr {
+  max-width: 20%;
+  height: 1px;
+  width: auto;
+  margin: 0.8rem 0;
+}
+a {
+  text-decoration: none;
+  font-size: var(--p-font-size);
+}
+a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+p {
+  font-size: var(--p-font-size);
+}
+/* header */
+
+.highlight {
+  color: red;
+}
+.dogbite-menu {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-footer-bg-color);
+}
+.dogbite-logo p {
+  font-weight: 300;
+}
+.dogbite-nav li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+/* main */
+.dogbite-main {
+  max-width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.presents {
+  color: #eeeeee;
+  text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+}
+.tower-of-power {
+  color: white;
+  font-weight: 400;
+  text-shadow: 4px 4px 5px #000000;
+}
+button {
+  font-family: "Hepta Slab", serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  background-color: var(--header-footer-bg-color);
+  border: var(--my-border);
+}
+button:hover {
+  background-color: #cccccc;
+}
+.fancy-image {
+  background: url(../img/12.png);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 600px;
+  grid-column: 1/3;
+}
+.inner-text {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inner-text p,
+.inner-text h1,
+.inner-text h3 {
+  color: white;
+  text-align: center;
+  max-width: 60%;
+  margin: 5px auto;
+}
+.inner-text h1 {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+/* gallery*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gal-img {
+  position: relative;
+  text-align: center;
+  border: var(--my-border);
+}
+.gal-img a {
+  position: absolute;
+  font-weight: 400;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* footer */
+.dogbite-footer-container {
+  margin: 1px 0 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-evenly;
+  align-items: left;
+}
+.dogbite-footer-item {
+  padding: 1.7rem;
+  background-color: var(--header-footer-bg-color);
+  border: var(--my-border);
+}
+.dogbite-footer-item ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+.dogbite-footer-item li {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+.dogbite-footer-item a {
+  font-size: 0.9rem;
+}
+/* utility classes */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (max-width: 768px) {
+  .dogbite-main,
+  .dogbite-footer-container,
+  .gallery {
+    grid-template-columns: auto;
+  }
+  .dogbite-menu {
+    flex-direction: column;
+  }
+  .dogbite-nav li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  .dogbite-nav,
+  .dogbite-logo {
+    width: 100%;
+    text-align: center;
+  }
+  .main-text {
+    text-align: center;
+  }
+  h1,
+  h2 {
+    font-size: 2.5rem;
+  }
+}
