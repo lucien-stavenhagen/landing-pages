@@ -102,6 +102,7 @@ button:hover {
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
   height: 600px;
   grid-column: 1/3;

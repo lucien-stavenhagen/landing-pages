@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Hepta Slab", serif;
+}
+
+body {
+  background-color: #0a3042;
+}
+
+header {
+  text-align: center;
+  background-image: url("../img/slides/Acrop2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+header h1,
+header h2,
+header p {
+  padding: 1.9rem;
+  color: white;
+  text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+}
+
+hr {
+  width: 60%;
+  margin: auto;
+}
+
+#toggle-btn {
+  margin-top: 0.1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#toggle-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.slide-container {
+  margin-top: 0.1rem;
+  position: relative;
+}
+
+.slide-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.slides {
+  display: none;
+  opacity: 0;
+  -webkit-animation-name: fadeinout;
+          animation-name: fadeinout;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.numberslide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 1rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: black;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+.numberslide:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+footer {
+  background-image: url("../img/slides/index.jpg");
+  text-align: center;
+}
+
+footer h2,
+footer p {
+  margin-top: 2px;
+  padding: 1.3rem;
+  color: white;
+  text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+}
+
+@-webkit-keyframes fadeinout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+  .btn-group {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=slideshow.css.map */

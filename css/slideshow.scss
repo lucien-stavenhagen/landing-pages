@@ -1,0 +1,130 @@
+$btn-font-size: 0.9rem;
+$btn-color: rgba(255, 255, 255, 0.9);
+$btn-hover-color: rgba(255, 255, 255, 0.6);
+$main-font-size: 1.2rem;
+$my-margin-top: 0.1rem;
+$translucent-black: rgba(0, 0, 0, 0.1);
+$translucent-black-hover: rgba(0, 0, 0, 0.8);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Hepta Slab", serif;
+}
+html {
+}
+body {
+  background-color: rgb(10, 48, 66);
+}
+header {
+  text-align: center;
+  background-image: url("../img/slides/Acrop2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+header h1,
+header h2,
+header p {
+  padding: 1.9rem;
+  color: white;
+  text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+}
+hr {
+  width: 60%;
+  margin: auto;
+}
+#toggle-btn {
+  margin-top: $my-margin-top;
+  padding: 0.8rem;
+  background-color: $btn-color;
+  font-size: $btn-font-size;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#toggle-btn:hover {
+  cursor: pointer;
+  background-color: $btn-hover-color;
+}
+.main-container {
+}
+.slide-container {
+  margin-top: $my-margin-top;
+  position: relative;
+}
+.slide-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.slides {
+  display: none;
+  opacity: 0;
+  animation-name: fadeinout;
+  animation-duration: 1s;
+}
+.numberslide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 1rem;
+  transform: translateX(-50%);
+  color: black;
+  background-color: $translucent-black;
+  font-size: $main-font-size;
+}
+.numberslide:hover {
+  background-color: $translucent-black-hover;
+  color: white;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  color: white;
+  background-color: $translucent-black;
+}
+.next {
+  right: 0;
+}
+.prev:hover,
+.next:hover {
+  background-color: $translucent-black-hover;
+  cursor: pointer;
+}
+
+footer {
+  background-image: url("../img/slides/index.jpg");
+  text-align: center;
+}
+footer h2,
+footer p {
+  margin-top: 2px;
+  padding: 1.3rem;
+  color: white;
+  text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+}
+@keyframes fadeinout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+  .btn-group {
+    text-align: center;
+  }
+}

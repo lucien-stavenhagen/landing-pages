@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./css/slideshow.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:200,300,400|Roboto:100,300,400&display=swap"
+            rel="stylesheet" />
+        <title>Carousel</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Image Carousel</h1>
+            <hr />
+            <h2>Hand crafted by Lucien Stavenhagen</h2>
+            <hr />
+            <p>with <dfn>HTML</dfn>, <dfn>CSS</dfn> and <dfn>JavaScript</dfn></p>
+        </header>
+        <main class="main-container">
+            <div class="btn-group">
+                <button id="toggle-btn" onclick="toggle()"></button>
+            </div>
+            <div class="slide-container">
+                <div class="slides">
+                    <div class="numberslide">(1) Kloster Lorsch Torhalle</div>
+                    <img src="./img/slides/1920px-Kloster_Lorsch_07.jpg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(2) Porch of the Maidens</div>
+                    <img src="./img/slides/1920px-Porch_of_Maidens.jpg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(3) Church of Santa Maria Nuova. Vicenza, Italy</div>
+                    <img src="./img/slides/1920px-S_Maria_Nuova_Vicenza_20081204-1_retouched.jpg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(4) Hagia Eirene. Istanbul, Turkey</div>
+                    <img src="./img/slides/Byz-hagia-eirene-497315595-crop-583511395f9b58d5b19655e7.jpg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(5) Chartres Cathedral</div>
+                    <img src="./img/slides/Chartres-528951782-crop-57df6a545f9b586516c98386.jpg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(6) Maison Carree. Nimes, France</div>
+                    <img src="./img/slides/MaisonCarre.jpeg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(7) The Pantheon. Rome, Italy</div>
+                    <img
+                        src="./img/slides/architecture-classical-pantheon-567596451-crop-5ad8dfcb875db90036fb5402.jpg"></img>
+                </div>
+                <div class="slides">
+                    <div class="numberslide">(9) Baroque building in Versailles</div>
+                    <img src="./img/slides/versailles-680783213-crop-5825fc173df78c6f6ac1fc84.jpg"></img>
+                </div>
+                <a class="prev" onclick="go(-1)">&#10094</a>
+                <a class="next" onclick="go(1)">&#10095</a>
+
+            </div>
+        </main>
+        <footer>
+            <h2>&copy; DogBite Web Development, 2019</h2>
+            <p>DogBite Web Development is an eco-friendly production</p>
+        </footer>
+    </body>
+    <script>
+        //
+        // closure encapsulating a slide starting
+        // index. Returns a function that sets display
+        // "block" on successive images in the container.
+        // direction set by direction parameter
+        //
+        const doSlides = () => {
+            let sIndex = 0;
+            return (direction) => {
+                sIndex += direction;
+                let slides = document.getElementsByClassName("slides");
+                if (sIndex > slides.length) {
+                    sIndex = 1;
+                }
+                if (sIndex < 1) {
+                    sIndex = slides.length;
+                }
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                    slides[i].style.opacity = 0;
+                }
+                slides[sIndex - 1].style.display = "block";
+                slides[sIndex - 1].style.opacity = 1;
+            }
+        }
+        //
+        // function that toggles
+        // a setInterval() call 
+        // to the scroll function
+        // on or off. Called by an
+        // onclick event from the 
+        // carousel button
+        //
+        const toggleAuto = () => {
+            var int;
+            var auto = true;
+            return () => {
+                if (auto) {
+                    int = setInterval(() => { go(1) }, 6000);
+                    button.innerHTML = willpause;
+                } else {
+                    clearInterval(int);
+                    button.innerHTML = paused;
+                }
+                console.log("toggle: " + auto)
+                auto = !auto;
+            }
+        }
+        //
+        // setup and toggle
+        // text in the carousel
+        // button
+        //
+        const paused = "Autoscroll Paused";
+        const willpause = "Pause AutoScroll";
+        const button = document.getElementById("toggle-btn");
+        button.innerHTML = paused;
+
+        //
+        // init the go function
+        // and toggle auto functions.
+        // call go function once to set a 
+        // default slide on page load.
+        //
+        const go = doSlides();
+        const toggle = toggleAuto();
+        go(1);
+    </script>
+
+</html>
