@@ -1,5 +1,5 @@
 const titleoff = "Click to add new book";
-const titleon = "Click to hide input form";
+const titleon = "Click to hide this form";
 const toggleAddNewMenu = () => {
   let show = true;
   return () => {
@@ -27,10 +27,10 @@ function Book(title, author, pages, ifread) {
   this.ifread = ifread;
   this.info = function() {
     let text = `<div class='inner-list'>
-    <div>title: ${this.title}</div>
-    <div>author: ${this.author}</div>
-    <div>no. of pages: ${this.pages}</div>
-    <div>read it yet?: ${this.ifread}</div>`;
+    <div>Title: ${this.title}</div>
+    <div>Author: ${this.author}</div>
+    <div>No. of pages: ${this.pages}</div>
+    <div>Read it yet?: ${this.ifread}</div>`;
     text += `</div>`;
     return text;
   };
@@ -107,7 +107,7 @@ const displayBooks = () => {
     li.classList.add("card");
     li.innerHTML = myLibrary[i].info();
     let button = document.createElement("button");
-    button.innerHTML = "delete";
+    button.innerHTML = "Delete";
     button.addEventListener("click", deleteItem);
     button.setAttribute("data-id", i);
     li.appendChild(button);
