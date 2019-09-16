@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="css/library.css">
+        <title>Library</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Library app</h1>
+        </header>
+        <section class="input-form">
+            <h1 id="form-title"></h1>
+            <form id="add-book" onsubmit="addBookToLibrary(event)">
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input id="title" type="text">
+                    <div id="bad-title"></div>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author: </label>
+                    <input id="author" type="text">
+                    <div id="bad-author"></div>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Number of pages</label>
+                    <input id="pages" type="text">
+                    <div id="bad-pages"></div>
+                </div>
+                <div class="form-group">
+                    <label for="isread">Read yet?</label>
+                    <input id="isread" type="text">
+                    <div id="bad-isread"></div>
+                </div>
+                <div class="form-group">
+                    <input name="submit" type="submit" value="submit">
+                </div>
+            </form>
+        </section>
+        <section class="input-form">
+            <div id="display"></div>
+        </section>
+    </body>
+    <script src="js/library.js"></script>
+
+</html>

@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  background-color: rgb(218, 238, 240);
+}
+#bad-title,
+#bad-author,
+#bad-pages,
+#bad-isread {
+  color: red;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(97, 63, 11);
+  color: white;
+}
+#form-title {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+#form-title:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+#display {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  padding: 0.8rem 0;
+  width: 100%;
+}
+.container {
+  padding: 1rem 0;
+}
+.card {
+  padding: 1rem;
+  margin: 1px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 100, 0.1);
+  border-radius: 3px;
+}
+.card button {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+}
+.card button:hover {
+  background-color: #555555;
+  color: white;
+}
+.inner-list div {
+  padding: 1rem;
+}
+.input-form {
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+}
+#add-book {
+  display: none;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  justify-content: space-evenly;
+  background-color: rgba(0, 100, 0, 0.1);
+}
+.form-group {
+  padding: 10px;
+}
