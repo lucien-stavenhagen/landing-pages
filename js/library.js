@@ -165,12 +165,13 @@ const libraryFactory = () => {
 // define the callbacks
 // from the factory
 //
-const factory = libraryFactory();
 
-const addBookToLibrary = factory.addBookToLibrary;
-const displayBooks = factory.displayBooks;
-const deleteItem = factory.deleteItem;
-const markAsRead = factory.markAsRead;
+const {
+  addBookToLibrary,
+  displayBooks,
+  deleteItem,
+  markAsRead
+} = libraryFactory();
 //
 // first run
 // to setup the main
