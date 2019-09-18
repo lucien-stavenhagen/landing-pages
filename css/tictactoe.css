@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  margin-bottom: 1rem;
+  background-color: #cccccc;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: rgba(97, 63, 11, 0.4);
+  color: white;
+}
+#display {
+  width: 550px;
+  height: 550px;
+  margin: auto;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+}
+.box {
+  height: 181px;
+  width: 181px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 255, 255, 0.4);
+}
+#button-display {
+  width: 550px;
+  margin: auto;
+  padding: 1px 0;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 1fr 2fr;
+}
+#info-box,
+#reset-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #666666;
+  color: white;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+#reset-button:hover {
+  background-color: #444444;
+  cursor: pointer;
+}
