@@ -15,11 +15,12 @@ header {
   color: white;
 }
 #display {
-  width: 550px;
-  height: 550px;
+  /*width: 550px;
+  height: 550px;*/
+  max-width: 540px;
   margin: auto;
   display: grid;
-  grid-gap: 3px;
+  grid-gap: 2px;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
   justify-items: center;
@@ -27,17 +28,18 @@ header {
   background-color: white;
 }
 .box {
-  height: 181px;
-  width: 181px;
+  /*height: 181px;
+  width: 181px;*/
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 8rem;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 255, 255, 0.4);
 }
 #button-display {
-  width: 550px;
+  max-width: 540px;
   margin: auto;
   padding: 1px 0;
   display: grid;
@@ -50,10 +52,20 @@ header {
   font-size: 1.2rem;
   background-color: #666666;
   color: white;
-  text-align: center;
+  display: flex;
+  align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 #reset-button:hover {
   background-color: #444444;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .box {
+    font-size: 5rem;
+  }
+  #info-box,
+  #reset-button {
+    font-size: 1rem;
+  }
 }

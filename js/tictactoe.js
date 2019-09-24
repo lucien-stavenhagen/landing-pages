@@ -1,4 +1,5 @@
 const gameBoard = () => {
+  let colorMask = "rgb(144, 189, 218)";
   //
   // toggler for alternating
   // users
@@ -12,7 +13,7 @@ const gameBoard = () => {
   //
   // the overall board state
   //
-  let boardArray = ["", "", "", "", "", "", "", "", ""];
+  let boardArray = ["*", "*", "*", "*", "*", "*", "*", "*", "*"];
   //
   // all the combinations
   // of indexes in boardArray
@@ -58,6 +59,12 @@ const gameBoard = () => {
       box.classList.add("box");
       box.setAttribute("data-id", i);
       box.innerHTML = boardArray[i];
+      box.style.backgroundColor = colorMask;
+      if (boardArray[i] !== "*") {
+        box.style.color = "black";
+      } else {
+        box.style.color = colorMask;
+      }
       box.addEventListener("click", makeMove);
       grid.appendChild(box);
     }
@@ -83,7 +90,7 @@ const gameBoard = () => {
   //
   const markBox = (event, user) => {
     const id = event.target.getAttribute("data-id");
-    if (event.target.innerHTML != "") {
+    if (event.target.innerHTML != "*") {
       utilityMessage(`Square ${Number(id) + 1} already played! Try again...`);
       return false;
     }
@@ -119,7 +126,7 @@ const gameBoard = () => {
     userToggle = true;
     freezeboard = false;
     boardArray = boardArray.map((value, index, arr) => {
-      return "";
+      return "*";
     });
     updateBoard();
   };
@@ -140,7 +147,7 @@ const gameBoard = () => {
         boardArray[winConditions[i][1]],
         boardArray[winConditions[i][2]]
       ];
-      if (a === b && a === c && c != "") {
+      if (a === b && a === c && c != "*") {
         utilityMessage(`${a} wins!`);
         freezeboard = true;
         highlightWin(
@@ -177,7 +184,7 @@ const gameBoard = () => {
   // check for a winner having failed.
   //
   const checkForDraw = () => {
-    if (boardArray.indexOf("") == -1) {
+    if (boardArray.indexOf("*") === -1) {
       utilityMessage("Draw!");
       freezeboard = true;
     }
