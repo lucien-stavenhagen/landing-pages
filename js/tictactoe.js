@@ -164,17 +164,15 @@ const gameBoard = () => {
   // changes background of
   // 3 boxes. Generally the
   // 3 winning boxes found in
-  // checkForWin
+  // checkForWin. We already know
+  // the indices from the win check.
   //
   const highlightWin = (a, b, c) => {
     const boxes = document.getElementById("display").children;
-    for (let i = 0; i < boxes.length; i++) {
-      let id = boxes[i].getAttribute("data-id");
-      if (id == a || id == b || id == c) {
-        boxes[i].style.backgroundImage =
-          "linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)";
-      }
-    }
+    [a, b, c].forEach(i => {
+      boxes[i].style.backgroundImage =
+        "linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet)";
+    });
   };
   //
   // a draw is every element
